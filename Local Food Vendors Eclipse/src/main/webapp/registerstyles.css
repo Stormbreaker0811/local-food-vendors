@@ -1,0 +1,46 @@
+*{
+	margin: 0rem;
+	padding: 0rem;
+}
+.form-group{
+	margin: 1rem;
+	padding: 1rem;
+	width: 400px;
+}
+#username{
+	margin : 1rem;
+	padding: 0.5rem;
+}
+#password{
+	margin: 1rem;
+	padding: 0.5rem;
+}
+#email{
+	margin: 1rem;
+	padding: 0.5rem;
+}
+input[type="submit"]{
+	margin: 1rem;
+	padding: 0.5rem;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+}
+.register-container{
+	justify-content: center;
+	align-items: center;
+	width: 100rem;
+	position: relative;
+}
+.register-form{
+	justify-content: center;
+	align-items: center;
+}
+.login-container{
+	justify-content: center;
+	align-items: center;
+	width: 100rem;
+	position: relative;
+	/* float: inline-end; */
+}
