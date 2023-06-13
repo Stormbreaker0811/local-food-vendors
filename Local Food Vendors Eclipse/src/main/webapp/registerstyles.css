@@ -1,46 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
 *{
-	margin: 0rem;
-	padding: 0rem;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
-.form-group{
-	margin: 1rem;
-	padding: 1rem;
-	width: 400px;
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+	background-image: url('food4.png');
 }
-#username{
-	margin : 1rem;
-	padding: 0.5rem;
+
+.main-container{
+	width: 410px;
+	height: 480px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	background: transparent;
+	backdrop-filter: blur(12px);
+	padding: 30px;
+	box-shadow: 0 0 8px rgba(0,0,0, 0.3);
+	border: 2px rgb(75, 75, 75);
+	border-radius: 39px;
 }
-#password{
-	margin: 1rem;
-	padding: 0.5rem;
+
+.container{
+	width: 820px;
+	height: 100%;
+	position: absolute;
+	left:0;
+	z-index: -1;
+	display: flex;
+	flex-direction: row;
+	transition: all 0.5s ease;
 }
-#email{
-	margin: 1rem;
-	padding: 0.5rem;
+.login-container,.register-container{
+	width: 410px;
+	padding: 30px;
+	height: 100%;
 }
-input[type="submit"]{
-	margin: 1rem;
-	padding: 0.5rem;
+
+#slide:checked ~ .container{
+	left: -410px;
+	position: absolute;
+}
+
+.container .text{
+	font-size: 35px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.container form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.container form .data{
+	height: 45px;
+	width: 100%;
+	margin: 20px 0;
+}
+
+form .data label{
+	font-size: 18px;
+}
+
+form .data input{
+	height: 100%;
+	width: 100%;
+	padding-left: 10px;
+	font-size: 17px;
+	border: 1px solid silver;
+	outline: none;
+	border-radius: 2px;
+}
+
+ .data input:focus{
+	border-color: #2b2b2b;
+	border-bottom-width: 2.5px;
+}
+
+form .forgot-pass{
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-self: start;
+}
+
+form .forgot-pass a{
+	color: #131313;
+	text-decoration: none;
+}
+
+form .forgot-pass a:hover{
+	text-decoration: underline;
+}
+
+form .btn-login{
+	margin: 52px 0 20px 0;
+	height: 45px;
+	width: 100%;
+}
+
+form .btn-register{
+	margin: 20px 0;
+	height: 45px;
+	width: 100%;
+}
+
+form .btn-login button,form .btn-register button{
+	height: 100%;
+	width: 100%;
+	background: #f0f0f0;
+	color: #242424;
+	font-size: 18px;
+	font-weight: 500;
+	border: none;
+	text-transform: uppercase;
 	cursor: pointer;
-	justify-content: center;
-	align-items: center;
-	align-self: center;
+	border-radius: 20px;
 }
-.register-container{
-	justify-content: center;
-	align-items: center;
-	width: 100rem;
-	position: relative;
+
+.btn-login button:hover,.btn-register button:hover{
+	background: #242424;
+	color: #fff;
+	border: 2px solid #f0f0f0;
+	
 }
-.register-form{
-	justify-content: center;
-	align-items: center;
+
+form .register-link{
+	text-align: center;
 }
-.login-container{
-	justify-content: center;
-	align-items: center;
-	width: 100rem;
-	position: relative;
-	/* float: inline-end; */
+
+form .register-link a{
+	color: #252525;
+	text-decoration: none;
+}
+
+form .register-link .slide{
+	cursor: pointer;
+}
+
+form .register-link a:hover{
+	text-decoration: underline;
+}
+
+input[type="checkbox"]{
+	display: none;
 }
