@@ -130,7 +130,7 @@ header .search{
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
-  length: 400px
+  length: 400px;
   position: relative;
   margin: auto;
 }
