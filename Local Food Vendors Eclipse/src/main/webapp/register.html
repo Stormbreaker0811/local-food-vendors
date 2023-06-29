@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="registerstyles.css">
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
 </head>
 <body>
 
@@ -38,6 +39,25 @@
             <div class="btn-login">
                <button type="submit">login</button>
             </div>
+            <script src="https://accounts.google.com/gsi/client" async defer></script>
+         </head>
+         <body>
+           <!-- Add a button for "Sign in with Google" -->
+           <div id="g_id_onload"
+                data-client_id="67460e74-02e3-11e8-b443-00163e990bdb"
+                data-callback="handleCredentialResponse">
+           </div>
+           <div class="g_id_signin"></div>
+         
+           <!-- JavaScript code for handling the response -->
+           <script>
+             function handleCredentialResponse(response) {
+               console.log(response);
+               // Redirect to the Google Account page
+               window.location.href = "https://myaccount.google.com/";
+             }
+           </script>
+         </form>
    
             <div class="register-link">
                Don't have an account? <a href="#"><label for="slide" class="slide">Register now!</label></a>
@@ -71,7 +91,7 @@
    
             <div class="register-link">
                Already have an account ? <a href="#"><label for="slide" class="slide">Sign in!</label></a>
-            </div>
+            </div>  
          </form>
 
       </div>
