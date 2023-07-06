@@ -45,17 +45,24 @@
            <!-- Add a button for "Sign in with Google" -->
            <div id="g_id_onload"
                 data-client_id="67460e74-02e3-11e8-b443-00163e990bdb"
-                data-callback="handleCredentialResponse">
+                data-callback="signInwithGoogle">
            </div>
-           <div class="g_id_signin"></div>
+           <div class="g_id_signin" id="google-signin"></div>
          
            <!-- JavaScript code for handling the response -->
            <script>
-             function handleCredentialResponse(response) {
-               console.log(response);
-               // Redirect to the Google Account page
-               window.location.href = "https://myaccount.google.com/";
-             }
+            import {getAuth , signInWithPopup , GoogleAuthProvider} from "firebase/auth";
+            const signInwithGoogle = () => {
+               const provider = new GoogleAuthProvider();
+               const auth = getAuth();
+               auth.signInWithPopup(provider).then(() => {
+                  window.location.assign('./profile');
+               })
+               .catch(error => {
+                  console.error(error);
+                  alert("The Following Error Occured: "+error.message);
+               })
+            }
            </script>
          </form>
    
@@ -143,6 +150,7 @@
          console.log("Data could not be saved." + error);
        } else {
          console.log("Data saved successfully.");
+         alert("Register Success..//")
          // Clear the form fields
          document.getElementById("email").value = "";
          document.getElementById("password").value = "";
