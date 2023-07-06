@@ -42,6 +42,7 @@
             <script src="https://accounts.google.com/gsi/client" async defer></script>
          </head>
          <body>
+<<<<<<< HEAD
            <!-- Add a button for "Sign in with Google" -->
            <div id="g_id_onload"
                 data-client_id="67460e74-02e3-11e8-b443-00163e990bdb"
@@ -64,6 +65,100 @@
                })
             }
            </script>
+=======
+
+
+            <!-- Google authentication -->
+            <div id="LoginScreen">
+               <button id="login">Login with Google</button>
+             </div>
+             <div id="dashboard">
+               <div id="userDetails"></div>
+               <button id="logout">Logout</button>
+             </div>
+         
+             <!-- The core Firebase JS SDK is always required and must be listed first -->
+             <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+         
+             <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+         
+             <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+         
+             <script>
+               // Your web app's Firebase configuration
+               var firebaseConfig = {
+                 // Paste your Config Code
+                 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+         
+           apiKey: "AIzaSyA7YX4hf4AkdGcOLGAeAO90zZVbQORm4lQ",
+           authDomain: "local-vendors-application.firebaseapp.com",
+           databaseURL: "https://local-vendors-application-default-rtdb.firebaseio.com",
+           projectId: "local-vendors-application",
+           storageBucket: "local-vendors-application.appspot.com",
+           messagingSenderId: "1045242204104",
+           appId: "1:1045242204104:web:fc55fe8dc8bdf110653afd",
+           measurementId: "G-QRXZEKRCJE"
+         };
+               
+               // Initialize Firebase
+               firebase.initializeApp(firebaseConfig);
+         
+               document.getElementById('dashboard').style.display="none"
+         
+               document.getElementById('login').addEventListener('click', GoogleLogin)
+               document.getElementById('logout').addEventListener('click', LogoutUser)
+         
+               let provider = new firebase.auth.GoogleAuthProvider()
+         
+               function GoogleLogin(){
+                 console.log('Login Btn Call')
+                 firebase.auth().signInWithPopup(provider).then(res=>{
+                   console.log(res.user)
+                   document.getElementById('LoginScreen').style.display="none"
+                   document.getElementById('dashboard').style.display="block"
+                   showUserDetails(res.user)
+                 }).catch(e=>{
+                   console.log(e)
+                 })
+               }
+         
+               function showUserDetails(user){
+                 document.getElementById('userDetails').innerHTML = `
+                   <img src="${user.photoURL}" style="width:10%">
+                   <p>Name: ${user.displayName}</p>
+                   <p>Email: ${user.email}</p>
+                 `
+               }
+         
+               function checkAuthState(){
+                 firebase.auth().onAuthStateChanged(user=>{
+                   if(user){
+                     document.getElementById('LoginScreen').style.display="none"
+                     document.getElementById('dashboard').style.display="block"
+                     showUserDetails(user)
+                   }else{
+         
+                   }
+                 })
+               }
+         
+               function LogoutUser(){
+                 console.log('Logout Btn Call')
+                 firebase.auth().signOut().then(()=>{
+                   document.getElementById('LoginScreen').style.display="block"
+                   document.getElementById('dashboard').style.display="none"
+                 }).catch(e=>{
+                   console.log(e)
+                 })
+               }
+               checkAuthState()
+             </script>
+            
+          
+
+            
+>>>>>>> dc1c36d2a8a274e98d6956d1ecb47d3ea235f0cc
          </form>
    
             <div class="register-link">
