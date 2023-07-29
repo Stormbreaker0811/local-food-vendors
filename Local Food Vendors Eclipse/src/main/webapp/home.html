@@ -1,72 +1,71 @@
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Home Page!</title>
-<link rel="stylesheet" href="home.css">
-</head>
-<body>
-    <nav>
-        <a href="#" class="logo">Logo</a>
-        <div class="group">
-            <ul class="navigation">
-                <li class="home"><a href="#">Home</a></li>
-                <li class="about"><a href="#">About</a></li>
-                <li class="services"><a href="/services pages/services.html">Services</a></li>
-                <li class="contact"><a href="#">Contact Us</a></li>
-                <li class="login"><a href="register.html">Login</a></li>
+  <head>
+    <title>Food Order</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+     
+      href="cat.css"
+    />
+    <script src="cat.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex">
+        <div class="navbar">
+          <h1 class="logoWebsite">AppName</h1>
+          <div class="openMenu"><i class="fas fa-bars fa-2x"></i></div>
+
+          <h1 class="logoMobile">Lorem</h1>
+
+          <nav class="mainMenu">
+            <ul>
+              <li><a class="strike" href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Categories</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contack</a></li>
+              <li><a href="#">Services</a></li>
+              <button class="btn">Menu</button>
             </ul>
-            <div class="search">
-                <span class="icon">
-                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
-                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
-                </span>
-            </div>
+            <div class="closeMenu"><i class="fas fa-times fa-2x"></i></div>
+          </nav>
+
+          <div class="cart"><i class="fas fa-shopping-cart fa-2x"></i></div>
         </div>
-        <div class="searchBox">
-            <input type="text" placeholder="Search Here...">
-        </div>
-    </nav>
+        <div class="body">
+          
+            <div class="slideshow-container fade">
 
- <!-- Slideshow container -->
- <div class="slideshow-container fade">
+              <!-- Full images with numbers and message Info -->
+              <div class="Containers">
+              
+                <img src="image1.jpg" style="width:100%">
+                <div class = "caption">
+                  <img src = "caption1.png" >
+                  <button type="button" class = "button">Browse now!</button>
+                </div>
+              </div>
+          
+              <div class="Containers">
+              
+                <img src="image2.jpg" style="width:100%">
+                
+              </div>
+            
+              <div class="Containers">
+                
+                <img src="image3.jpg" style="width:100%">
+                
+              </div>
+          </div>
 
-    <!-- Full images with numbers and message Info -->
-    <div class="Containers">
-    
-      <img src="image1.jpg" style="width:100%">
-      <div class = "caption">
-        <img src = "caption1.png" >
-        <button type="button" class = "button">Browse now!</button>
-      </div>
-    </div>
-
-    <div class="Containers">
-    
-      <img src="image2.jpg" style="width:100%">
-      
-    </div>
-  
-    <div class="Containers">
-      
-      <img src="image3.jpg" style="width:100%">
-      
-    </div>
-
-
-
-
-    
-
-
-
-
-
-
-    <!-- Back and forward buttons -->
+              <!-- Back and forward buttons -->
     <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
     <a class="forward" onclick="plusSlides(1)">&#10095;</a>
-  </div>
+  
   <br>
   
   <!-- The circles/dots -->
@@ -75,51 +74,219 @@
     <span class="dots" onclick="currentSlide(2)"></span>
     <span class="dots" onclick="currentSlide(3)"></span>
   </div> 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        let searchBtn = document.querySelector('.searchBtn');
-        let closeBtn = document.querySelector('.closeBtn');
-        let searchBox = document.querySelector('.searchBox');
-        searchBtn.onclick = function(){
-            searchBox.classList.add('active');
-            closeBtn.classList.add('active');
-            searchBtn.classList.add('active');
-        }
-        closeBtn.onclick = function(){
-            searchBox.classList.remove('active');
-            closeBtn.classList.remove('active');
-            searchBtn.classList.remove('active');
-        }
-        var slidePosition = 1;
-SlideShow(slidePosition);
 
-// forward/Back controls
-function plusSlides(n) {
-  SlideShow(slidePosition += n);
-}
 
-//  images controls
-function currentSlide(n) {
-  SlideShow(slidePosition = n);
-}
-////////////
 
-function SlideShow(n) {
-  var i;
-  var slides = document.getElementsByClassName("Containers");
-  var circles = document.getElementsByClassName("dots");
-  if (n > slides.length) {slidePosition = 1}
-  if (n < 1) {slidePosition = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < circles.length; i++) {
-      circles[i].className = circles[i].className.replace(" enable", "");
-  }
-  slides[slidePosition-1].style.display = "block";
-  circles[slidePosition-1].className += " enable";
-} 
-</script>
-</body>
+          <div class="cards">
+            <div class="flex">
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/513470606/photo/still-life-with-dairy-product.webp?s=2048x2048&w=is&k=20&c=yb1xiwthRgTNo4GjGqvPxKTL-6M4m0jSTaIdwLZoaVU=" alt="tacos" />
+                <h5>Dairy Products</h5>
+              </div>
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/1263686908/photo/mixed-salty-snack-flat-lay-table-scene-on-a-wood-background.jpg?s=2048x2048&w=is&k=20&c=JWl163dYRxpHazeAEz83LT-SyvhiqxDUZ61hb04yN6M=" alt="pizza" />
+                <h5>Snacks and more</h5>
+              </div>
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/1208790371/photo/healthy-fresh-rainbow-colored-fruits-and-vegetables-background.jpg?s=612x612&w=is&k=20&c=u0rKq5ETIAajrzV649zqdxb0w9Gm6NBTWQUnxGucN5c=" alt="burger" />
+                <h5>Vegetables & Fruits</h5>
+              </div>
+              <div class="card">
+                <img src="https://media.istockphoto.com/id/1267369752/photo/soda-drinks-orange-lemon-lime-and-cola.jpg?s=2048x2048&w=is&k=20&c=GlwKKi1fMGcOrAPKg8_p9jvWpm2fgV4irUVIz7krDZw=" alt="nachos" />
+                <h5>Cold Drinks</h5>
+              </div>
+              <div class="card">
+                <img src="" alt="noodles" />
+                <h5>
+                    Instant receips</h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Sweet Tooth</h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Tea & Coffe Powder</h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Wheat & Rice</h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Bread & Biscuits </h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Healthy Drinks</h5>
+              </div>
+              
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Sauces& spreads</h5>
+              </div>
+              <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles" />
+                <h5>Oils&Spices</h5>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          </div>
+          <div class="mobile">
+            <p>
+                
+            </p>
+          </div>
+        </div>
+
+
+        <section class = aboutussection>
+          
+          <div class="about-us-container">
+            <div class="about-us-image">
+              <img src="aboutus.gif" alt="About Us Image">
+            </div>
+            <div class="about-us-content">
+              <h2 class="about-us-heading">ABOUT US</h2>
+              <p class="about-us-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a tortor ut magna rhoncus tristique a et velit. Sed sit amet metus quis massa rhoncus vulputate. In bibendum auctor odio vel euismod. Sed eu mauris nec est pharetra ullamcorper eu in neque. Nullam auctor sapien in risus malesuada bibendum.
+                
+              </p> <br>
+              <p>
+                <button class="buttons">
+                  EXPLORE
+                  
+                </button>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class = "contactussection">
+
+            <div class="form">
+              <div class="contact-info">
+                <h3 class="title">Let's get in touch</h3>
+                <p class="text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                  dolorum adipisci recusandae praesentium dicta!
+                </p>
+      
+                <div class="info">
+                  <div class="information">
+                    <img src="img/location.png" class="icon" alt="" />
+                    <p>Pune, India</p>
+                  </div>
+                  <div class="information">
+                    <img src="img/email.png" class="icon" alt="" />
+                    <p>lorem@ipsum.com</p>
+                  </div>
+                  <div class="information">
+                    <img src="img/phone.png" class="icon" alt="" />
+                    <p>123-456-789</p>
+                  </div>
+                </div>
+      
+                <div class="social-media">
+                  <p>Connect with us :</p>
+                  <div class="social-icons">
+                    <a href="#">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+      
+                <form action="index.html" autocomplete="off">
+                  <h3 class="title">Contact us</h3>
+                  <div class="input-container">
+                    <input type="text" name="name" class="input" />
+                    <label for="">Username</label>
+                    <span>Username</span>
+                  </div>
+                  <div class="input-container">
+                    <input type="email" name="email" class="input" />
+                    <label for="">Email</label>
+                    <span>Email</span>
+                  </div>
+                  <div class="input-container">
+                    <input type="tel" name="phone" class="input" />
+                    <label for="">Phone</label>
+                    <span>Phone</span>
+                  </div>
+                  <div class="input-container textarea">
+                    <textarea name="message" class="input"></textarea>
+                    <label for="">Message</label>
+                    <span>Message</span>
+                  </div>
+                  <input type="submit" value="Send" class="buttonscontact" />
+                </form>
+              </div>
+            </div>
+          
+      
+        </section>
+      
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script>
+            let searchBtn = document.querySelector('.searchBtn');
+            let closeBtn = document.querySelector('.closeBtn');
+            let searchBox = document.querySelector('.searchBox');
+            searchBtn.onclick = function(){
+                searchBox.classList.add('active');
+                closeBtn.classList.add('active');
+                searchBtn.classList.add('active');
+            }
+            closeBtn.onclick = function(){
+                searchBox.classList.remove('active');
+                closeBtn.classList.remove('active');
+                searchBtn.classList.remove('active');
+            }
+            var slidePosition = 1;
+    SlideShow(slidePosition);
+    
+    // forward/Back controls
+    function plusSlides(n) {
+      SlideShow(slidePosition += n);
+    }
+    
+    //  images controls
+    function currentSlide(n) {
+      SlideShow(slidePosition = n);
+    }
+    
+    function SlideShow(n) {
+      var i;
+      var slides = document.getElementsByClassName("Containers");
+      var circles = document.getElementsByClassName("dots");
+      if (n > slides.length) {slidePosition = 1}
+      if (n < 1) {slidePosition = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < circles.length; i++) {
+          circles[i].className = circles[i].className.replace(" enable", "");
+      }
+      slides[slidePosition-1].style.display = "block";
+      circles[slidePosition-1].className += " enable";
+    } 
+    </script>
+ 
+  </body>
 </html>
